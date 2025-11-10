@@ -6,7 +6,7 @@
 
 ## Overview
 
-**CosmoLink** is an interactive web platform designed for astronomy and space enthusiasts.  
+**PULSAR** is an interactive web platform designed for astronomy and space enthusiasts.  
 It combines **real space data**, **community engagement**, and **AI-powered learning** to make space exploration accessible, fun, and educational.
 
 Users can:
