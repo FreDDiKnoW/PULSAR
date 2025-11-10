@@ -1,6 +1,7 @@
 # PULSAR — The Virtual Astrophysics Club
 
 > Explore the universe. Connect with explorers. Learn from the stars.
+> made by Klymenko Fedir & Morales Daniel
 
 ---
 
