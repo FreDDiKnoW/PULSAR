@@ -139,7 +139,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # venv
-venv/
+../../venv/
 
 # db
 db.sqlite3
