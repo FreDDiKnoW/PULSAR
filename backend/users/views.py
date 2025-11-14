@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
-from PULSAR.backend.users.serializers import UserRegistrationSerializer
+from .serializers import UserRegistrationSerializer
 
 
 @api_view(['GET'])
