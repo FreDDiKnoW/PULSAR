@@ -5,10 +5,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import UserRegistrationSerializer
+from .serializers import UserRegistrationSerializer, UserProfileSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def home_view(request):
     today = timezone.now()
     today_str = today.strftime('%Y-%m-%d')
@@ -51,3 +53,12 @@ def registration_view(request):
         }, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def profile_view(request):
+    user = request.user
+    serializer = UserProfileSerializer(user)
+    return Response(serializer.data)
+

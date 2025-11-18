@@ -8,9 +8,8 @@ class CustomUser(AbstractUser):
         ('moderator', 'Moderator'),
         ('admin', 'Admin'),
     )
-
+    email = models.EmailField(unique=True)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
-
     astro_level = models.IntegerField(default=1)
 
     def __str__(self):
