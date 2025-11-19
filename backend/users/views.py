@@ -7,6 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import UserRegistrationSerializer, UserProfileSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.decorators import parser_classes
 
 
 @api_view(['GET'])
@@ -55,10 +57,21 @@ def registration_view(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'PATCH'])
 @permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
 def profile_view(request):
     user = request.user
-    serializer = UserProfileSerializer(user)
-    return Response(serializer.data)
 
+    if request.method == 'GET':
+        serializer = UserProfileSerializer(user, context={'request': request})
+        return Response(serializer.data)
+
+    elif request.method == 'PATCH':
+        serializer = UserProfileSerializer(user, data=request.data, partial=True, context={'request': request}
+        )
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -44,6 +44,18 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
+    avatar_url = serializers.SerializerMethodField()
+
     class Meta:
         model = CustomUser
-        fields = ['id', 'username', 'email', 'role', 'astro_level', 'date_joined']
+        fields = ['id', 'username', 'email', 'role', 'astro_level', 'date_joined', 'avatar', 'avatar_url']
+        extra_kwargs = {'avatar': {'write_only': True}}
+
+    def get_avatar_url(self, obj):
+        if obj.avatar:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.avatar.url)
+            return obj.avatar.url
+
+        return f"https://ui-avatars.com/api/?name={obj.username}&background=random&color=fff"
