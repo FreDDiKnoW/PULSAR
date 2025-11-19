@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "b5e333de-741d-4522-b7fa-33be90e62f7c",
+		"name": "PULSAR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45202447"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"email\": \"newuser@test.com\",\r\n    \"password\": \"StrongPassword123!\",\r\n    \"password2\": \"StrongPassword123!\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"email\": \"newuser@test.com\",\r\n    \"password\": \"StrongPassword123!\",\r\n    \"password2\": \"StrongPassword123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/register/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"password\": \"StrongPassword123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/login/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTE5OTY0LCJpYXQiOjE3NjM1MTYzNjQsImp0aSI6IjY4ZTZlOGUzMGEzYjQ0YjViNzY3Nzc0OWFiNzdlNTE5IiwidXNlcl9pZCI6IjEifQ.euXK67LOh_H01HZN8GlKJxgbDPTjeWo4az2-fcl3Ky8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/profile/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch_ProgileImg",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTE5OTY0LCJpYXQiOjE3NjM1MTYzNjQsImp0aSI6IjY4ZTZlOGUzMGEzYjQ0YjViNzY3Nzc0OWFiNzdlNTE5IiwidXNlcl9pZCI6IjEifQ.euXK67LOh_H01HZN8GlKJxgbDPTjeWo4az2-fcl3Ky8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"description": "new_avatar",
+							"type": "file",
+							"src": "postman-cloud:///1f0c4df3-0fa0-4c50-88d3-cbe3ff25f910"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/profile/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Forum_Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/forum/posts/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_Forum_Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTExNTA4LCJpYXQiOjE3NjM1MDc5MDksImp0aSI6IjhjNWFjMzgxZWRmMjQzM2E5NDg1Zjg5MmRiOWY1MzhjIiwidXNlcl9pZCI6IjEifQ.uNAgfHh8Nde36vb2hFWq33hT8v1whGK-ysyxc-WFPrI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test\",\r\n    \"content\": \"Testing posts\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/forum/posts/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Forum Comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/forum/posts/1/comments/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"posts",
+						"1",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_Forum_Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTEyODI4LCJpYXQiOjE3NjM1MDkyMjgsImp0aSI6IjI5MzM0Y2U1OGYwNTQzMTdhZGMzZjQ0ZjFkZDAzMGVkIiwidXNlcl9pZCI6IjEifQ.KLH4z9zDKiJPaC3jJxuF1NwPcr-Dbo8J3JufWKivZxE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Comment test\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/forum/posts/1/comments/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"posts",
+						"1",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

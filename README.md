@@ -83,3 +83,6 @@ SpaceX Launches - Real-time rocket launch info
 OpenAI API - Quiz & content generation (maybe)
 Mapbox / Three.js - 3D Star Map visualization (maybe)
 
+
+## For tests endpoints on postman:
+    {{baseURL}} = http://127.0.0.1:8000
