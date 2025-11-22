@@ -102,7 +102,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTE5OTY0LCJpYXQiOjE3NjM1MTYzNjQsImp0aSI6IjY4ZTZlOGUzMGEzYjQ0YjViNzY3Nzc0OWFiNzdlNTE5IiwidXNlcl9pZCI6IjEifQ.euXK67LOh_H01HZN8GlKJxgbDPTjeWo4az2-fcl3Ky8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -128,14 +128,14 @@
 			"response": []
 		},
 		{
-			"name": "Patch_ProgileImg",
+			"name": "ChangeImg",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTE5OTY0LCJpYXQiOjE3NjM1MTYzNjQsImp0aSI6IjY4ZTZlOGUzMGEzYjQ0YjViNzY3Nzc0OWFiNzdlNTE5IiwidXNlcl9pZCI6IjEifQ.euXK67LOh_H01HZN8GlKJxgbDPTjeWo4az2-fcl3Ky8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTcwODg0LCJpYXQiOjE3NjM1NjcyODQsImp0aSI6ImQyYjE4YzI4Yzg3ZTQzNjJhN2JhNWRiMGQ3ODI0NjE2IiwidXNlcl9pZCI6IjEifQ.moRLtLoTvtupBzNjKTFhYZmQ6oCpiJMBqFESWHkdWVA",
 							"type": "string"
 						}
 					]
@@ -149,7 +149,7 @@
 							"key": "avatar",
 							"description": "new_avatar",
 							"type": "file",
-							"src": "postman-cloud:///1f0c4df3-0fa0-4c50-88d3-cbe3ff25f910"
+							"src": []
 						}
 					]
 				},
@@ -168,7 +168,7 @@
 			"response": []
 		},
 		{
-			"name": "Get_Forum_Posts",
+			"name": "ForumPosts",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -198,14 +198,14 @@
 			"response": []
 		},
 		{
-			"name": "Post_Forum_Posts",
+			"name": "ForumPosts",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTExNTA4LCJpYXQiOjE3NjM1MDc5MDksImp0aSI6IjhjNWFjMzgxZWRmMjQzM2E5NDg1Zjg5MmRiOWY1MzhjIiwidXNlcl9pZCI6IjEifQ.uNAgfHh8Nde36vb2hFWq33hT8v1whGK-ysyxc-WFPrI",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -214,7 +214,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Test\",\r\n    \"content\": \"Testing posts\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Test3\",\r\n    \"content\": \"Testing post3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -237,8 +237,11 @@
 			"response": []
 		},
 		{
-			"name": "Get_Forum Comment",
+			"name": "ForumComment",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -259,14 +262,14 @@
 			"response": []
 		},
 		{
-			"name": "Post_Forum_Comment",
+			"name": "ForumComment",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTEyODI4LCJpYXQiOjE3NjM1MDkyMjgsImp0aSI6IjI5MzM0Y2U1OGYwNTQzMTdhZGMzZjQ0ZjFkZDAzMGVkIiwidXNlcl9pZCI6IjEifQ.KLH4z9zDKiJPaC3jJxuF1NwPcr-Dbo8J3JufWKivZxE",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -293,6 +296,131 @@
 						"posts",
 						"1",
 						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ForumPostLike/Unlike",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/forum/posts/1/like/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"posts",
+						"1",
+						"like",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ForumCommentLike/Unlike",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test3\",\r\n    \"content\": \"Testing post3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/forum/comments/1/like/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"forum",
+						"comments",
+						"1",
+						"like",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lounches",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test3\",\r\n    \"content\": \"Testing post3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/feed/launches/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						"launches",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asteroids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/feed/asteroids/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						"asteroids",
 						""
 					]
 				}
