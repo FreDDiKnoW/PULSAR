@@ -71,18 +71,3 @@ def asteroids_view(request):
 
     except requests.exceptions.RequestException as e:
         return Response({"error": str(e)}, status=503)
-
-
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def apod_view(request):
-    api_key = "44cRw2uQaRBSjD3dbq2V9z9XbkCzlHSHmO9EMn7K"
-    url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}"
-
-    try:
-        response = requests.get(url, timeout=5)
-        if response.status_code == 200:
-            return Response(response.json())
-        return Response({"error": "NASA APOD Error"}, status=503)
-    except Exception as e:
-        return Response({"error": str(e)}, status=503)
