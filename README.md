@@ -26,15 +26,15 @@ Stay up to date with the universe:
 - “Astronomy Picture of the Day” integration
 - Save events to your personal collection or star map
 
-### Star Map Builder
-- Interactive visualization of planets, stars, comets, and launches  
-- Add or customize cosmic objects with 3D rendering (Three.js / Mapbox)
-- Track your saved events across the sky
-
 ### Space Forum
 - Discussion boards for astronomy, space exploration, and astrophotography  
 - Moderation tools and user reputation system  
 - Likes, replies, and achievements for active participation
+
+### Star Map Builder
+- Interactive visualization of planets, stars, comets, and launches  
+- Add or customize cosmic objects
+- Track your saved events across the sky
 
 ### AI AstroBot & Quizzes
 - AI-generated quizzes, facts, and space trivia  

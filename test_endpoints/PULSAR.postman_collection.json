@@ -102,7 +102,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNjUzNjcwLCJpYXQiOjE3NjM2NTAwNzAsImp0aSI6IjA2NGVhYTJmYmE3YjQ1YjE5MWM3OWQyMThmZjQ1Y2M1IiwidXNlcl9pZCI6IjEifQ.B9QHuQIGaBEK1oJyuQLvQthgtpDNaxUSFdeFbsAIpl8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -205,7 +205,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTcxODgwLCJpYXQiOjE3NjM1NjgyODAsImp0aSI6ImIyN2Q2ZDE0MDI2NjRjM2I5ZmU2ZTI5ZWFhM2EyMmE5IiwidXNlcl9pZCI6IjEifQ.qUnjJy7IkTHSiKlPfLsaOFHJJf9cKA1vDLAJnK1rlsY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -269,7 +269,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTEyODI4LCJpYXQiOjE3NjM1MDkyMjgsImp0aSI6IjI5MzM0Y2U1OGYwNTQzMTdhZGMzZjQ0ZjFkZDAzMGVkIiwidXNlcl9pZCI6IjEifQ.KLH4z9zDKiJPaC3jJxuF1NwPcr-Dbo8J3JufWKivZxE",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -310,7 +310,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNjUzNjcwLCJpYXQiOjE3NjM2NTAwNzAsImp0aSI6IjA2NGVhYTJmYmE3YjQ1YjE5MWM3OWQyMThmZjQ1Y2M1IiwidXNlcl9pZCI6IjEifQ.B9QHuQIGaBEK1oJyuQLvQthgtpDNaxUSFdeFbsAIpl8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -342,7 +342,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNjUzNjcwLCJpYXQiOjE3NjM2NTAwNzAsImp0aSI6IjA2NGVhYTJmYmE3YjQ1YjE5MWM3OWQyMThmZjQ1Y2M1IiwidXNlcl9pZCI6IjEifQ.B9QHuQIGaBEK1oJyuQLvQthgtpDNaxUSFdeFbsAIpl8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
 							"type": "string"
 						}
 					]
@@ -364,6 +364,63 @@
 						"comments",
 						"1",
 						"like",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lounches",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test3\",\r\n    \"content\": \"Testing post3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/feed/launches/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						"launches",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asteroids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/feed/asteroids/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						"asteroids",
 						""
 					]
 				}
