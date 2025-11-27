@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -158,11 +159,3 @@ SIMPLE_JWT = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'pulsar.project.web@gmail.com'
-EMAIL_HOST_PASSWORD = 'efbo mtmh ufzb xnsp'
-DEFAULT_FROM_EMAIL = 'PULSAR Team <noreply@pulsar.com>'
