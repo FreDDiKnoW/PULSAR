@@ -1,3 +1,4 @@
+from django.utils import timezone
 from rest_framework import serializers
 from .models import CustomUser
 from django.contrib.auth.password_validation import validate_password
@@ -43,6 +44,14 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         return user
 
 
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True)
+
+    def validate(self, data):
+        return data
+
+
 class UserProfileSerializer(serializers.ModelSerializer):
     avatar_url = serializers.SerializerMethodField()
 
@@ -57,5 +66,4 @@ class UserProfileSerializer(serializers.ModelSerializer):
             if request:
                 return request.build_absolute_uri(obj.avatar.url)
             return obj.avatar.url
-
         return f"https://ui-avatars.com/api/?name={obj.username}&background=random&color=fff"
