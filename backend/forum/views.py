@@ -4,12 +4,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Post, Comment, PostLike, CommentLike
 from .serializers import PostSerializer, CommentSerializer
+from users.permissions import IsNotBlocked, IsOwnerOrModerator
 
 
 class PostListCreateView(generics.ListCreateAPIView):
     queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsNotBlocked]
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -22,7 +23,7 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class CommentListCreateView(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsNotBlocked]
 
     def get_queryset(self):
         post_id = self.kwargs['post_id']
@@ -35,7 +36,7 @@ class CommentListCreateView(generics.ListCreateAPIView):
 
 
 class BaseToggleLikeView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsNotBlocked]
     model = None
     like_model = None
     field_name = ''

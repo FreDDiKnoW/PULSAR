@@ -1,6 +1,7 @@
 from collections import UserDict
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 from users.storage import OverwriteStorage
 
 
@@ -25,8 +26,13 @@ class CustomUser(AbstractUser):
         blank=True
     )
 
-    def __str__(self):
-        return self.username
+    blocked_until = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.username
+
+    @property
+    def is_blocked(self):
+        if self.blocked_until and self.blocked_until > timezone.now():
+            return True
+        return False

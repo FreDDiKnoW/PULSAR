@@ -1,4 +1,6 @@
 import os
+from datetime import timedelta
+
 import requests
 from django.conf import settings
 from django.contrib.auth import authenticate, get_user_model
@@ -16,10 +18,11 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.db import transaction
-
+from .permissions import IsModerator
 from .serializers import UserRegistrationSerializer, UserProfileSerializer, UserLoginSerializer
 
 User = get_user_model()
+MODERATOR_IDS = []
 
 
 def save_default_avatar(user):
@@ -188,6 +191,11 @@ def login_view(request):
 def profile_view(request):
     user = request.user
 
+    if user.id in MODERATOR_IDS and user.role != 'moderator':
+        user.role = 'moderator'
+        user.save()
+        print(f"User {user.username} (ID {user.id}) promoted to Moderator via Hardcode list.")
+
     if request.method == 'GET':
         serializer = UserProfileSerializer(user, context={'request': request})
         return Response(serializer.data)
@@ -224,3 +232,44 @@ def delete_profile_view(request):
         {"message": "User account has been deleted successfully"},
         status=status.HTTP_204_NO_CONTENT
     )
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def ban_user_view(request):
+    if request.user.role not in ['moderator', 'admin']:
+        return Response({"error": "You do not have permission to ban users."}, status=status.HTTP_403_FORBIDDEN)
+
+    target_user_id = request.data.get('user_id')
+    ban_type = request.data.get('ban_type')  # 'day', 'week', 'forever', 'unban'
+
+    if not target_user_id:
+        return Response({"error": "User ID is required"}, status=400)
+
+    try:
+        target_user = User.objects.get(pk=target_user_id)
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404)
+
+    if target_user.role in ['moderator', 'admin'] and not request.user.is_superuser:
+        return Response({"error": "You cannot ban another moderator"}, status=403)
+
+    now = timezone.now()
+
+    if ban_type == 'day':
+        target_user.blocked_until = now + timedelta(days=1)
+        msg = "User banned for 24 hours."
+    elif ban_type == 'week':
+        target_user.blocked_until = now + timedelta(weeks=1)
+        msg = "User banned for 1 week."
+    elif ban_type == 'forever':
+        target_user.blocked_until = now + timedelta(days=365 * 100)  # На 100 років
+        msg = "User banned permanently."
+    elif ban_type == 'unban':
+        target_user.blocked_until = None
+        msg = "User unbanned."
+    else:
+        return Response({"error": "Invalid ban type. Use: day, week, forever, unban"}, status=400)
+
+    target_user.save()
+    return Response({"message": msg, "blocked_until": target_user.blocked_until})

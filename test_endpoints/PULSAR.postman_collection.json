@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"email\": \"newuser@test.com\",\r\n    \"password\": \"StrongPassword123!\",\r\n    \"password2\": \"StrongPassword123!\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Test\",\r\n    \"email\": \"freddiknow@gmail.com\",\r\n    \"password\": \"StrongPassword123!\",\r\n    \"password2\": \"StrongPassword123!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"password\": \"StrongPassword123!\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Test\",\r\n    \"password\": \"StrongPassword123!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +102,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDQ5NjIxLCJpYXQiOjE3NjQ0NDYwMjEsImp0aSI6IjFiNTgwNGQwYzU1YzQ5ZGZhZDcyMTk2MGVkY2JjMTFiIiwidXNlcl9pZCI6IjUifQ._LSevkmXG9v5gGHp7dstpPZLef6uyf7cujYzFifmbgY",
 							"type": "string"
 						}
 					]
@@ -135,7 +135,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzNTcwODg0LCJpYXQiOjE3NjM1NjcyODQsImp0aSI6ImQyYjE4YzI4Yzg3ZTQzNjJhN2JhNWRiMGQ3ODI0NjE2IiwidXNlcl9pZCI6IjEifQ.moRLtLoTvtupBzNjKTFhYZmQ6oCpiJMBqFESWHkdWVA",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDQ5NjIxLCJpYXQiOjE3NjQ0NDYwMjEsImp0aSI6IjFiNTgwNGQwYzU1YzQ5ZGZhZDcyMTk2MGVkY2JjMTFiIiwidXNlcl9pZCI6IjUifQ._LSevkmXG9v5gGHp7dstpPZLef6uyf7cujYzFifmbgY",
 							"type": "string"
 						}
 					]
@@ -180,7 +180,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\r\n    \"title\": \"Test3\",\r\n    \"content\": \"Testing post3\"\r\n}"
 				},
 				"url": {
 					"raw": "{{baseURL}}/api/forum/posts/",
@@ -205,7 +205,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDQ5NjIxLCJpYXQiOjE3NjQ0NDYwMjEsImp0aSI6IjFiNTgwNGQwYzU1YzQ5ZGZhZDcyMTk2MGVkY2JjMTFiIiwidXNlcl9pZCI6IjUifQ._LSevkmXG9v5gGHp7dstpPZLef6uyf7cujYzFifmbgY",
 							"type": "string"
 						}
 					]
@@ -269,7 +269,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MjY0MzUxLCJpYXQiOjE3NjQyNjA3NTEsImp0aSI6IjZiMGI5YjdkMDYxYTQ2OTc5MWI2NzcyNWJiMDYzYzUyIiwidXNlcl9pZCI6IjIifQ.Zt1aJ9sqlYBfF3Z73LwLAcSYRLmiSs0a42swGOE6fXU",
 							"type": "string"
 						}
 					]
@@ -310,7 +310,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MjY3NTA0LCJpYXQiOjE3NjQyNjM5MDQsImp0aSI6ImQzYTcxMWMwYTk3NjRhNDI5NzRiNTJkNGEwNTQ0MjJmIiwidXNlcl9pZCI6IjQifQ.HTp-ruueOj8PJVrrJCcjp9BkJZC5wRE-x-9RNK1F87w",
 							"type": "string"
 						}
 					]
@@ -342,7 +342,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MjY0MzUxLCJpYXQiOjE3NjQyNjA3NTEsImp0aSI6IjZiMGI5YjdkMDYxYTQ2OTc5MWI2NzcyNWJiMDYzYzUyIiwidXNlcl9pZCI6IjIifQ.Zt1aJ9sqlYBfF3Z73LwLAcSYRLmiSs0a42swGOE6fXU",
 							"type": "string"
 						}
 					]
@@ -381,7 +381,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzODU0Nzk2LCJpYXQiOjE3NjM4NTExOTYsImp0aSI6IjA0MjdjZTJjODJjMzRhYmQ4N2E0NTg2NjNmNGI5Y2QzIiwidXNlcl9pZCI6IjEifQ.RgZ0t8GUwWWtFAieGQElSJUidTk1WnAKGyXXrBcoc9U",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDQ5NjIxLCJpYXQiOjE3NjQ0NDYwMjEsImp0aSI6IjFiNTgwNGQwYzU1YzQ5ZGZhZDcyMTk2MGVkY2JjMTFiIiwidXNlcl9pZCI6IjUifQ._LSevkmXG9v5gGHp7dstpPZLef6uyf7cujYzFifmbgY",
 							"type": "string"
 						}
 					]
@@ -422,6 +422,59 @@
 						"feed",
 						"asteroids",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APOD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/feed/apod/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"feed",
+						"apod",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MjY3NTA0LCJpYXQiOjE3NjQyNjM5MDQsImp0aSI6ImQzYTcxMWMwYTk3NjRhNDI5NzRiNTJkNGEwNTQ0MjJmIiwidXNlcl9pZCI6IjQifQ.HTp-ruueOj8PJVrrJCcjp9BkJZC5wRE-x-9RNK1F87w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"newuser123\",\r\n    \"email\": \"newuser@test.com\",\r\n    \"password\": \"StrongPassword123!\",\r\n    \"password2\": \"StrongPassword123!\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/profile/delete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"profile",
+						"delete"
 					]
 				}
 			},
