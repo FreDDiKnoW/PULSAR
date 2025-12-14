@@ -1,24 +1,28 @@
 import os
+from datetime import timedelta
+
 import requests
 from django.conf import settings
+from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.tokens import default_token_generator
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-from django.utils import timezone
-from django.contrib.auth import authenticate, get_user_model
 from django.core.mail import send_mail
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils import timezone
 from django.utils.encoding import force_bytes, force_str
-from rest_framework.decorators import api_view, permission_classes, parser_classes
-from rest_framework.response import Response
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from rest_framework import status
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes, parser_classes
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.db import transaction
+from .permissions import IsModerator
 from .serializers import UserRegistrationSerializer, UserProfileSerializer, UserLoginSerializer
-from django.core.files.base import ContentFile
 
 User = get_user_model()
+MODERATOR_IDS = []
 
 
 def save_default_avatar(user):
@@ -107,29 +111,31 @@ def registration_view(request):
     if serializer.is_valid():
         email = serializer.validated_data['email']
         error_message = check_email_external(email)
-
         if error_message:
             return Response({'email': [error_message]}, status=status.HTTP_400_BAD_REQUEST)
-
-        user = serializer.save()
-        save_default_avatar(user)
-        user.is_active = False
-        user.save()
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token = default_token_generator.make_token(user)
-        activate_url = f"http://127.0.0.1:8000/api/activate/{uid}/{token}/"
-
         try:
-            send_mail(
-                subject='Activate your PULSAR account',
-                message=f'Hi {user.username},\n\nPlease click the link to activate your account:\n{activate_url}',
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[user.email],
-                fail_silently=False,
-            )
+            with transaction.atomic():
+                user = serializer.save()
+                save_default_avatar(user)
+                user.is_active = False
+                user.save()
+                uid = urlsafe_base64_encode(force_bytes(user.pk))
+                token = default_token_generator.make_token(user)
+                activate_url = f"http://127.0.0.1:8000/api/activate/{uid}/{token}/"
+                send_mail(
+                    subject='Activate your PULSAR account',
+                    message=f'Hi {user.username},\n\nPlease click the link to activate your account:\n{activate_url}',
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[user.email],
+                    fail_silently=False,
+                )
+
         except Exception as e:
-            print(f"Error sending email: {e}")
-            return Response({'error': 'Error sending activation email'}, status=500)
+            print(f"Registration failed: {e}")
+            return Response(
+                {'error': 'Failed to send activation email. Registration cancelled. Check your email address.'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
         return Response({
             'message': 'User registered. Please check your email to activate account.',
@@ -185,6 +191,11 @@ def login_view(request):
 def profile_view(request):
     user = request.user
 
+    if user.id in MODERATOR_IDS and user.role != 'moderator':
+        user.role = 'moderator'
+        user.save()
+        print(f"User {user.username} (ID {user.id}) promoted to Moderator via Hardcode list.")
+
     if request.method == 'GET':
         serializer = UserProfileSerializer(user, context={'request': request})
         return Response(serializer.data)
@@ -221,3 +232,44 @@ def delete_profile_view(request):
         {"message": "User account has been deleted successfully"},
         status=status.HTTP_204_NO_CONTENT
     )
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def ban_user_view(request):
+    if request.user.role not in ['moderator', 'admin']:
+        return Response({"error": "You do not have permission to ban users."}, status=status.HTTP_403_FORBIDDEN)
+
+    target_user_id = request.data.get('user_id')
+    ban_type = request.data.get('ban_type')  # 'day', 'week', 'forever', 'unban'
+
+    if not target_user_id:
+        return Response({"error": "User ID is required"}, status=400)
+
+    try:
+        target_user = User.objects.get(pk=target_user_id)
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404)
+
+    if target_user.role in ['moderator', 'admin'] and not request.user.is_superuser:
+        return Response({"error": "You cannot ban another moderator"}, status=403)
+
+    now = timezone.now()
+
+    if ban_type == 'day':
+        target_user.blocked_until = now + timedelta(days=1)
+        msg = "User banned for 24 hours."
+    elif ban_type == 'week':
+        target_user.blocked_until = now + timedelta(weeks=1)
+        msg = "User banned for 1 week."
+    elif ban_type == 'forever':
+        target_user.blocked_until = now + timedelta(days=365 * 100)  # На 100 років
+        msg = "User banned permanently."
+    elif ban_type == 'unban':
+        target_user.blocked_until = None
+        msg = "User unbanned."
+    else:
+        return Response({"error": "Invalid ban type. Use: day, week, forever, unban"}, status=400)
+
+    target_user.save()
+    return Response({"message": msg, "blocked_until": target_user.blocked_until})
